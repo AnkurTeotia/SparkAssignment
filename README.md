@@ -9,7 +9,7 @@ Steps to run the code
 - open admin - enter superuser credential
 - create manager in admin panel
 - open customer page - register customer
-- log in customer and make transactions
+- log in customer and make transactions - on transaction to send email .. you have to allow chrome to use outside extension
 - do many as you want 
 - open manager panel , login with manager credential 
 - select transaction to download
