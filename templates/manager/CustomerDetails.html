@@ -1,0 +1,88 @@
+{% extends 'layout/base2.html' %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+function getval()
+{
+  var ab= checkboxall()
+  document.getElementById("total").value = ab;
+}
+
+function checkboxall(){
+     var arr = [];
+     $('input[name="row-check"]:checked').each(function()
+        {
+           if($(this).is(':checked'))
+            arr.push($(this).val());
+        });
+        return arr
+}
+</script>
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="row top_tiles">
+              <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                   <div class="tile-stats" style="background-color: #003b4e; color: #0b2e13 ;">
+                     <a class="site_title" style="background-color: #51a9b5;" >ALL CUSTOMERS LIST</a>
+
+                </div>
+              </div>
+            </div>
+             <div class="row">
+               <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                      <h2>Customers Details</h2>
+                      <br/>
+                       <form class="form-horizontal form-label-left input_mask"  method="POST" action="{% url 'manager:cust_trans' %}">
+                            {% csrf_token %}
+
+                          <input type="hidden" class="form-control"   id="total" name="total">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-11">
+                          <button type="submit" class="btn btn-success" onclick="getval()" >Submit</button>
+                        </div>
+
+
+                       </form>
+
+                 <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                      <thead>
+                       <tr>
+                           <th>Select</th>
+                           <th>ID</th>
+                           <th>Name</th>
+                           <th>Email</th>
+                           <th>New Balance</th>
+                           <th>Date</th>
+                       </tr>
+                      </thead>
+                          <tbody>
+                            {% for data in customer %}
+                                <tr>
+                                   <td><input type="checkbox" name="row-check" value="{{data.id}}"></td>
+                                   <td id="val">{{data.id}}</td>
+                                   <td id="name">{{ data.first_name }} {{data.last_name}}</td>
+                                   <td id="email">{{ data.email}}</td>
+                                   <td id="mobile">{{ data.mobile}}</td>
+                                   <td id="date">{{ data.registration_date }}</td>
+
+                                </tr>
+                            {% endfor %}
+                          </tbody>
+                    </table>
+                  </div>
+
+
+                  </div>
+
+
+                  </div>
+
+                </div>
+              </div>
+          </div>
+
+ {% endblock content %}

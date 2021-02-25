@@ -1,0 +1,41 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <script src="{% static 'js/myjs.js' %}"></script>
+</head>
+<body style="background: peru">
+       <br>
+       <br><a href="{% url 'customer:register' %}"><button type="button" class="btn btn-info">Register</button></a>
+    <div class="form" style="background: burlywood;padding: 32px;max-width:475px;margin:60px auto;">
+      <div class="tab-content">
+        <div id="login">
+          <h2 align="center">Customer Login</h2>
+                {{ message }}
+          <form action="{% url 'customer:login' %}" method="post">
+              {% csrf_token %}
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email" name="email" autocomplete="off" class="form-control"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" autocomplete="off" name="password" class="form-control"/>
+          </div>
+          <p>&nbsp;</p>
+          <button type="submit" class="btn btn-info">Log In</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+</body>
+</html>

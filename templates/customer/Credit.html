@@ -1,0 +1,74 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+ <div class="right_col" role="main">
+          <div class="">
+            <div class="row top_tiles">
+              <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                   <div class="tile-stats" style="background-color: #003b4e; color: #0b2e13 ;">
+                     <a class="site_title" style="background-color: #51a9b5;" > Transfer Amount </a>
+                </div>
+              </div>
+            </div>
+               <div class="row" style="width: 80%;margin-left: 50px">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>For Deposit Purpose</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left" method="POST" action="{% url 'customer:credit' %}">
+                         {%  csrf_token %}
+                      <div class="item form-group">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-3"> Saving Account
+                        </label>
+
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                           <input type="text" class="form-control" name="tran_type" value="{{sav_acc.account_no}}" id="tran_type"readonly="readonly" placeholder="Read-Only Input">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" >Transaction Type <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                           <input type="text" class="form-control" name="tran_type" value="CREDIT  " id="tran_type"readonly="readonly" placeholder="Read-Only Input">
+                        </div>
+                      </div>
+
+
+
+                      <div class="ln_solid">
+
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" >Amount<span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                          <input type="text" class="form-control" name="enter_amount" id="enter_amount" required="required">
+                        </div>
+                      </div>
+
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                          {{ message }}
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+
+                          <button type="submit" class="btn btn-info">Submit</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}

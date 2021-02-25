@@ -1,0 +1,63 @@
+{% extends 'layout/base2.html' %}
+{% block content %}
+
+      <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="row top_tiles">
+              <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                   <div class="tile-stats" style="background-color: #003b4e; color: #0b2e13 ;">
+                     <a class="site_title" style="background-color: #51a9b5;" > TRANSACTION DATERANGE </a>
+                </div>
+              </div>
+            </div>
+               <div class="row" style="width: 80%;margin-left: 50px">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>SELECT DATE</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left" method="POST" action="{% url 'manager:date_range' %}">
+                         {%  csrf_token %}
+
+                        <br>
+                       <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Start Date : </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="date"  id="startdate" name="startdate" data-date-inline-picker="true" />
+                            </div>
+                       </div>
+                        <br>
+                       <div class="form-group">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12">End Date : </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="date" id="enddate" name="enddate" data-date-inline-picker="true" />
+                            </div>
+                       </div>
+
+
+                      <div class="ln_solid">
+
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+
+                          <button type="submit"  class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" id="rope" ></label>
+
+                    </form>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}

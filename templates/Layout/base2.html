@@ -1,0 +1,162 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banking System </title>
+    <!-- Bootstrap -->
+     <!-- Bootstrap -->
+    <link href="{% static 'css/Customer_dashboard/bootstrap.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'css/Customer_dashboard/font-awesome.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'css/Customer_dashboard/nprogress.css' %}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{% static 'css/Customer_dashboard/daterangepicker.css' %}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+      <link href="{% static 'css/Customer_dashboard/custom.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/green.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/dataTables.bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/buttons.bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/fixedHeader.bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/responsive.bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/scroller.bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/prettify.min.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/select2.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/switchery.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/starrr.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/bootstrap-datetimepicker.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/normalize.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/ion.rangeSlider.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/ion.rangeSlider.skinFlat.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/bootstrap-colorpicker.css' %}" rel="stylesheet">
+      <link href="{% static 'css/Customer_dashboard/cropper.css' %}" rel="stylesheet">
+      <style>
+          .my{
+              display: none;
+          }
+      </style>
+  </head>
+<body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+               <div class="navbar nav_title" style="border: 0; background-color: #fff;">
+              <a href="#" class="site_title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/static/img/logo.jpg"></a>
+            </div>
+
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+             <div class="profile clearfix">
+              <div class="profile_info">
+
+                 <p style="font-size: 17px">&nbsp;Banking System</p>
+              </div>
+            </div>
+              <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="{% url 'manager:home' %}"><i class="fa fa-home"></i> Home </a></li>
+                  <li><a href="{% url 'manager:cust_details' %}"><i class="fa fa-home"></i>  Customers Transaction </a></li>
+                  <li><a href="{% url 'manager:date_range' %}"><i class="fa fa-home"></i> DateRange Transaction </a></li>
+
+                </ul>
+
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="/static/img/bg.jpg" alt=""><a href="{% url 'manager:logout' %}">LogOut</a>
+
+                  </a>
+
+                </li>
+
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+         {% block content %}
+         {% endblock %}
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+               <p>All rights reserved.</p>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  </body>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'js/Customer_dashboard/jquery.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/Customer_dashboard/bootstrap.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'js/Customer_dashboard/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'js/Customer_dashboard/nprogress.js' %}"></script>
+    <!-- Chart.js -->
+
+    <!-- Flot -->
+
+    <script src="{% static 'js/Customer_dashboard/icheck.js' %}"></script>
+    <!-- Datatables -->
+    <script src="{% static 'js/Customer_dashboard/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/buttons.bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/buttons.print.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.fixedHeader.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.keyTable.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/responsive.bootstrap.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/dataTables.scroller.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/jszip.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/pdfmake.min.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/vfs_fonts.js' %}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'js/Customer_dashboard/custom.min.js' %}"></script>
+
+   <script src="{% static 'js/Customer_dashboard/validator.js' %}"></script>
+   <script src="{% static 'js/Customer_dashboard/bootstrap-datetimepicker.min.js' %}"></script>
+
+    <script src="{% static 'js/Customer_dashboard/moment.js' %}"></script>
+    <script src="{% static 'js/Customer_dashboard/daterangepicker.js' %}"></script>
+</html>
